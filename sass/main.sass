@@ -1,0 +1,44 @@
+html, body
+    margin: 0px
+    padding: 0px
+        
+body
+    color: #ffffff
+    font-family: Arial
+    font-size: 16px
+    background: #333333
+    
+a, button
+    cursor: default
+
+#main
+    position: relative
+    float: left    
+    width: 100%
+    overflow-x: hidden
+
+.set, .set > div
+    position: relative
+    float: left
+    width: 100%
+    height: 100vh
+    > div > div
+        display: block
+        width: 1140px
+        height: 100vh
+        margin: 0 auto
+
+.black
+    background: #333333
+    >div:first-child
+        background: -moz-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%)
+        background: -webkit-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%)
+        background: radial-gradient(ellipse at center,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%)
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 )    
+.green
+    background: rgba(0, 100, 0, 1)
+    >div:first-child
+        background: -moz-radial-gradient(center, ellipse cover,  rgba(46, 139, 87, 0.65) 0%, rgba(46, 139, 87,0) 100%)
+        background: -webkit-radial-gradient(center, ellipse cover,  rgba(46, 139, 87,0.65) 0%,rgba(46, 139, 87,0) 100%)
+        background: radial-gradient(ellipse at center,  rgba(46, 139, 87,0.65) 0%,rgba(46, 139, 87,0) 100%)
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 )    

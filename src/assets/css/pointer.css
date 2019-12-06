@@ -1,0 +1,239 @@
+.pointer {
+  position: fixed;
+  float: left;
+  left: 50px;
+  top: 50px;
+  border-radius: 50%;
+  background: #57b6cb;
+  width: 14px;
+  height: 14px; }
+  .pointer > span {
+    position: absolute;
+    float: left;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    opacity: 0; }
+    .pointer > span:nth-child(1) {
+      background: darkgreen;
+      left: -8px;
+      top: -8px;
+      z-index: 1; }
+    .pointer > span:nth-child(2) {
+      background: crimson;
+      top: -8px;
+      right: -8px; }
+    .pointer > span:nth-child(3) {
+      left: -8px;
+      top: 3px;
+      background: khaki; }
+    .pointer > span:nth-child(4) {
+      width: 14px;
+      height: 14px;
+      background: #57b6cb; }
+  .pointer.hover > span:nth-child(1) {
+    z-index: -1;
+    animation: animate1 1s 0.3s forwards; }
+  .pointer.hover > span:nth-child(2) {
+    z-index: -1;
+    animation: animate2 1s 0.5s forwards; }
+  .pointer.hover > span:nth-child(3) {
+    z-index: 1;
+    animation: animate3 1s 0.6s forwards; }
+  .pointer.hover > span:nth-child(4) {
+    z-index: 1;
+    opacity: 1; }
+  .pointer.active {
+    background: transparent; }
+    .pointer.active > span {
+      width: 14px;
+      height: 14px;
+      left: 0px;
+      top: 0px;
+      background: #57b6cb;
+      opacity: 1; }
+      .pointer.active > span:nth-child(1) {
+        animation: explodeBottom 0.5s forwards; }
+      .pointer.active > span:nth-child(2) {
+        animation: explodeTop 0.5s forwards; }
+      .pointer.active > span:nth-child(3) {
+        animation: explodeLeft 0.5s forwards; }
+      .pointer.active > span:nth-child(4) {
+        animation: explodeRight 0.5s forwards; }
+      .pointer.active > span:nth-child(5) {
+        animation: explodeLeftTop 0.5s forwards; }
+      .pointer.active > span:nth-child(6) {
+        animation: explodeRightbottom 0.5s forwards; }
+      .pointer.active > span:nth-child(7) {
+        animation: explodeLeftBottom 0.5s forwards; }
+      .pointer.active > span:nth-child(8) {
+        animation: explodeRightTop 0.5s forwards; }
+      .pointer.active > span:nth-child(9) {
+        animation: explodeMiddle 0.5s forwards; }
+
+.pointer:hover {
+  cursor: none;
+  z-index: 1; }
+
+@keyframes explodeRotate {
+  100% {
+    /*transform: rotate(360deg) */ } }
+@keyframes explodeMiddle {
+  0% {
+    background: #57b6cb; }
+  100% {
+    transform: scale(0.3);
+    filter: blur(5px);
+    background: #57b6cb; } }
+@keyframes explodeBottom {
+  0% {
+    background: crimson; }
+  100% {
+    transform: scale(0.5);
+    top: 14px;
+    filter: blur(5px);
+    background: #57b6cb; } }
+@keyframes explodeTop {
+  0% {
+    background: crimson; }
+  100% {
+    top: -14px;
+    transform: scale(0.5);
+    filter: blur(5px);
+    background: #57b6cb; } }
+@keyframes explodeLeft {
+  0% {
+    background: crimson; }
+  100% {
+    transform: scale(0.5);
+    left: -14px;
+    filter: blur(5px);
+    background: #57b6cb; } }
+@keyframes explodeRight {
+  0% {
+    background: crimson; }
+  100% {
+    transform: scale(0.5);
+    left: 14px;
+    filter: blur(5px);
+    background: #57b6cb; } }
+@keyframes explodeLeftTop {
+  0% {
+    background: crimson; }
+  100% {
+    left: -14px;
+    top: -14px;
+    transform: scale(0.3);
+    filter: blur(5px);
+    background: #57b6cb; } }
+@keyframes explodeRightbottom {
+  0% {
+    background: crimson; }
+  100% {
+    left: 14px;
+    top: 14px;
+    transform: scale(0.3);
+    filter: blur(5px);
+    background: #57b6cb; } }
+@keyframes explodeLeftBottom {
+  0% {
+    background: crimson; }
+  100% {
+    left: -14px;
+    top: 14px;
+    transform: scale(0.3);
+    filter: blur(5px);
+    background: #57b6cb; } }
+@keyframes explodeRightTop {
+  0% {
+    background: crimson; }
+  100% {
+    left: 14px;
+    top: -14px;
+    transform: scale(0.3);
+    filter: blur(5px);
+    background: #57b6cb; } }
+@keyframes animate1 {
+  0% {
+    opacity: 1;
+    left: -8px;
+    top: -8px;
+    z-index: -1; }
+  50% {
+    left: 16px;
+    top: 16px;
+    width: 4px;
+    height: 4px; }
+  75% {
+    z-index: 2; }
+  100% {
+    left: -8px;
+    top: -8px;
+    z-index: -1;
+    opacity: 1; } }
+@keyframes animate2 {
+  0% {
+    opacity: 1;
+    top: -8px;
+    right: -8px;
+    z-index: -1;
+    width: 4px;
+    height: 4px; }
+  50% {
+    top: 16px;
+    right: 16px; }
+  75% {
+    z-index: 2; }
+  100% {
+    opacity: 1;
+    top: -8px;
+    right: -8px;
+    z-index: -1; } }
+@keyframes animate3 {
+  0% {
+    opacity: 1;
+    left: -16px;
+    z-index: 2; }
+  50% {
+    left: 22px;
+    width: 4px;
+    height: 4px; }
+  100% {
+    left: -16px;
+    opacity: 1;
+    width: 8px;
+    height: 8px; } }
+@keyframes mouseHover {
+  0% {
+    transform: scale(1);
+    border-color: transparent;
+    opacity: 1; }
+  100% {
+    transform: scale(2);
+    border-color: rgba(87, 182, 203, 0.5);
+    opacity: 0.5; } }
+@keyframes mouseClicked {
+  0% {
+    transform: scale(1);
+    border-color: transparent;
+    opacity: 1; }
+  60% {
+    transform: scale(2);
+    border-color: rgba(87, 182, 203, 0.5);
+    opacity: 0.5; }
+  70% {
+    transform: scale(1);
+    border-color: transparent;
+    opacity: 1; }
+  80% {
+    transform: scale(2);
+    border-color: rgba(87, 182, 203, 0.5);
+    opacity: 0.5; }
+  90% {
+    transform: scale(0.8); }
+  100% {
+    transform: scale(2);
+    border-color: transparent;
+    opacity: 1; } }
+
+/*# sourceMappingURL=pointer.css.map */

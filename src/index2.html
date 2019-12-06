@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>--</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <main id="main">            
+        <section class="set black">
+            <div style="display: flex; align-items: center; text-align: center;"> 
+                <div style="display: block; margin: 0 auto; height: 200px;">
+                   <a href="index-2.html" style="background: #fff; padding: 15px 50px;">Eu sou um link</a>
+                   <button style="background: #fff; padding: 15px 50px;">Eu sou um botão</button>
+                </div>
+            </div>
+        </section>
+        <section class="set green">
+            <div>                
+            </div>
+        </section>
+    </main>    
+    <script src="assets/js/jquery-3.1.1.min.js"></script>
+    <script src="assets/js/mouseAtomo.js"></script>
+<script>/*Plugin*/    
+(function($){"use strict";$.fn.mouseAtomo=function(options){var $el=$(this),defaults={time:10,negativeX:15,negativeY:25,hoverAnimate:true,timeLoad:500},state=false,settings=$.extend({},defaults,options);function init(){$el.append('<i class="pointer" id="pointer"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></i > ');}
+function mouseMoved(x,y){$("#pointer").animate({left:eval(x-settings.negativeX)+"px",top:eval(y-settings.negativeY)+"px"},5);}
+$el[0].addEventListener('mousemove',function(e){if(state)window.clearTimeout(state);var moveX=e.clientX,moveY=e.clientY;state=setTimeout(function(){mouseMoved(moveX,moveY);},settings.time);},false);$(document).on("click","a:not(.pointerExplode), button:not(.pointerExplode)",function(e){e.preventDefault();var $this=$(this);$this.addClass("pointerExplode");$("#pointer").removeClass("hover").addClass("active");setTimeout(function(){$this[0].click();},settings.timeLoad);});$("a, button").hover(function(){$("#pointer").addClass("hover");},function(){setTimeout(function(){$("#pointer").removeClass("hover");},10);});return init();}}(jQuery));/*Ready*/$(document).ready(function(){ $("#main").mouseAtomo();});</script>
+</body>
+</html>

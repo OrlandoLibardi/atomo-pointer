@@ -1,0 +1,262 @@
+$azul: rgba(87, 182, 203, 1)
+$verde: rgba(0, 100, 0, 1)
+$vermelho: rgba(220, 20, 60, 1)
+$amarelo: rgba(240, 230, 140, 1)    
+.pointer
+    position: fixed
+    float: left
+    left: 50px
+    top: 50px
+    border-radius: 50%
+    background: $azul
+    width: 14px
+    height: 14px    
+    > span
+        position: absolute
+        float: left
+        border-radius: 50%
+        width: 8px
+        height: 8px
+        opacity: 0
+        &:nth-child(1)
+            background: $verde       
+            left: -8px
+            top: -8px
+            z-index: 1
+        &:nth-child(2)
+            background: $vermelho
+            top: -8px
+            right: -8px
+        &:nth-child(3)
+            left: -8px
+            top: 3px
+            background: $amarelo
+        &:nth-child(4)
+            width: 14px
+            height: 14px    
+            background: $azul
+    &.hover > span
+        &:nth-child(1)
+            z-index: -1
+            animation: animate1 1s .3s forwards 
+        &:nth-child(2)            
+            z-index: -1
+            animation: animate2 1s .5s forwards 
+        &:nth-child(3)
+            z-index: 1
+            animation: animate3 1s .6s forwards 
+        &:nth-child(4)
+            z-index: 1
+            opacity: 1
+    &.active
+        background: transparent
+        > span
+            width: 14px
+            height: 14px
+            left: 0px
+            top: 0px
+            background: $azul
+            opacity: 1
+            &:nth-child(1)
+                animation: explodeBottom .5s forwards                
+            &:nth-child(2)
+                animation: explodeTop .5s forwards
+            &:nth-child(3)
+                animation: explodeLeft .5s forwards
+            &:nth-child(4)
+                animation: explodeRight .5s forwards
+            &:nth-child(5)
+                animation: explodeLeftTop .5s forwards
+            &:nth-child(6)
+                animation: explodeRightbottom .5s forwards
+            &:nth-child(7)
+                animation: explodeLeftBottom .5s forwards
+            &:nth-child(8)
+                animation: explodeRightTop .5s forwards
+            &:nth-child(9)
+                animation: explodeMiddle .5s forwards
+                
+.pointer:hover
+    cursor: none
+    z-index: 1
+    
+
+
+@keyframes explodeRotate
+    100%
+        /*transform: rotate(360deg)*/
+
+@keyframes explodeMiddle
+    0%
+        background: $azul
+    100%
+        transform: scale(.3)   
+        filter: blur(5px)
+        background: $azul
+        
+
+@keyframes explodeBottom
+    0%
+        background: $vermelho
+    100%
+        transform: scale(.5)  
+        top: 14px      
+        filter: blur(5px)
+        background: $azul
+
+@keyframes explodeTop
+    0%
+        background: $vermelho
+    100%
+        top: -14px
+        transform: scale(.5)   
+        filter: blur(5px)
+        background: $azul
+
+@keyframes explodeLeft
+    0%
+        background: $vermelho
+    100%
+        transform: scale(.5)        
+        left: -14px
+        filter: blur(5px)
+        background: $azul
+
+@keyframes explodeRight
+    0%
+        background: $vermelho
+    100%
+        transform: scale(.5)        
+        left: 14px
+        filter: blur(5px)
+        background: $azul
+
+@keyframes explodeLeftTop
+    0%
+        background: $vermelho
+    100%
+        left: -14px
+        top: -14px
+        transform: scale(.3)
+        filter: blur(5px)
+        background: $azul
+
+@keyframes explodeRightbottom
+    0%
+        background: $vermelho
+    100%
+        left: 14px
+        top: 14px
+        transform: scale(.3)        
+        filter: blur(5px)
+        background: $azul
+
+@keyframes explodeLeftBottom
+    0%
+        background: $vermelho
+    100%
+        left: -14px
+        top: 14px
+        transform: scale(.3)
+        filter: blur(5px)
+        background: $azul
+
+@keyframes explodeRightTop
+    0%
+        background: $vermelho
+    100%
+        left: 14px
+        top: -14px
+        transform: scale(.3) 
+        filter: blur(5px)
+        background: $azul
+
+
+@keyframes animate1
+    0%
+        opacity: 1
+        left: -8px
+        top: -8px        
+        z-index: -1
+    50%
+        left: 16px
+        top: 16px
+        width: 4px
+        height: 4px  
+    75%
+        z-index: 2    
+    100%
+        left: -8px
+        top: -8px
+        z-index: -1
+        opacity: 1
+        
+@keyframes animate2
+    0%
+        opacity: 1
+        top: -8px
+        right: -8px        
+        z-index: -1
+        width: 4px
+        height: 4px
+    50%
+        top: 16px
+        right: 16px
+    75%
+        z-index: 2    
+    100%
+        opacity: 1
+        top: -8px
+        right: -8px        
+        z-index: -1
+
+@keyframes animate3
+    0%
+        opacity: 1
+        left: -16px
+        z-index: 2    
+    50%
+        left: 22px
+        width: 4px
+        height: 4px
+    100%
+        left: -16px
+        opacity: 1
+        width: 8px
+        height: 8px
+
+@keyframes mouseHover
+    0%
+        transform: scale(1)
+        border-color: transparent
+        opacity: 1
+    100%
+        transform: scale(2)
+        border-color: rgba(87, 182, 203, .5)
+        opacity: .5
+
+@keyframes mouseClicked
+    0%
+        transform: scale(1)
+        border-color: transparent
+        opacity: 1
+    60%
+        transform: scale(2)
+        border-color: rgba(87, 182, 203, .5)
+        opacity: .5
+    70%
+        transform: scale(1)
+        border-color: transparent
+        opacity: 1
+    80%
+        transform: scale(2)
+        border-color: rgba(87, 182, 203, .5)
+        opacity: .5
+    90%
+        transform: scale(.8)
+    100%
+        transform: scale(2)
+        border-color: transparent
+        opacity: 1
+        
+    
