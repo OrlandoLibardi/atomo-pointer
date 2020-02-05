@@ -1,6 +1,3 @@
-/**
- * Validador
- */
 (function ($) {
     "use strict";
     $.fn.mouseAtomo = function (options) {

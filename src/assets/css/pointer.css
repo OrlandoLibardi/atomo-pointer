@@ -80,79 +80,97 @@
     /*transform: rotate(360deg) */ } }
 @keyframes explodeMiddle {
   0% {
+    opacity: 1;
     background: #57b6cb; }
   100% {
     transform: scale(0.3);
     filter: blur(5px);
-    background: #57b6cb; } }
+    background: #57b6cb;
+    opacity: 0.1; } }
 @keyframes explodeBottom {
   0% {
+    opacity: 1;
     background: crimson; }
   100% {
     transform: scale(0.5);
     top: 14px;
     filter: blur(5px);
-    background: #57b6cb; } }
+    background: #57b6cb;
+    opacity: 0.1; } }
 @keyframes explodeTop {
   0% {
+    opacity: 1;
     background: crimson; }
   100% {
     top: -14px;
     transform: scale(0.5);
     filter: blur(5px);
-    background: #57b6cb; } }
+    background: #57b6cb;
+    opacity: 0.1; } }
 @keyframes explodeLeft {
   0% {
+    opacity: 1;
     background: crimson; }
   100% {
     transform: scale(0.5);
     left: -14px;
     filter: blur(5px);
-    background: #57b6cb; } }
+    background: #57b6cb;
+    opacity: 0.1; } }
 @keyframes explodeRight {
   0% {
+    opacity: 1;
     background: crimson; }
   100% {
     transform: scale(0.5);
     left: 14px;
     filter: blur(5px);
-    background: #57b6cb; } }
+    background: #57b6cb;
+    opacity: 0.1; } }
 @keyframes explodeLeftTop {
   0% {
+    opacity: 1;
     background: crimson; }
   100% {
     left: -14px;
     top: -14px;
     transform: scale(0.3);
     filter: blur(5px);
-    background: #57b6cb; } }
+    background: #57b6cb;
+    opacity: 0.1; } }
 @keyframes explodeRightbottom {
   0% {
+    opacity: 1;
     background: crimson; }
   100% {
     left: 14px;
     top: 14px;
     transform: scale(0.3);
     filter: blur(5px);
-    background: #57b6cb; } }
+    background: #57b6cb;
+    opacity: 0.1; } }
 @keyframes explodeLeftBottom {
   0% {
+    opacity: 1;
     background: crimson; }
   100% {
     left: -14px;
     top: 14px;
     transform: scale(0.3);
     filter: blur(5px);
-    background: #57b6cb; } }
+    background: #57b6cb;
+    opacity: 0.1; } }
 @keyframes explodeRightTop {
   0% {
+    opacity: 1;
     background: crimson; }
   100% {
     left: 14px;
     top: -14px;
     transform: scale(0.3);
     filter: blur(5px);
-    background: #57b6cb; } }
+    background: #57b6cb;
+    opacity: 0.1; } }
 @keyframes animate1 {
   0% {
     opacity: 1;
@@ -170,7 +188,7 @@
     left: -8px;
     top: -8px;
     z-index: -1;
-    opacity: 1; } }
+    opacity: 0; } }
 @keyframes animate2 {
   0% {
     opacity: 1;
@@ -185,7 +203,7 @@
   75% {
     z-index: 2; }
   100% {
-    opacity: 1;
+    opacity: 0;
     top: -8px;
     right: -8px;
     z-index: -1; } }
@@ -200,7 +218,7 @@
     height: 4px; }
   100% {
     left: -16px;
-    opacity: 1;
+    opacity: 0;
     width: 8px;
     height: 8px; } }
 @keyframes mouseHover {

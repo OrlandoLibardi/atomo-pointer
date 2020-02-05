@@ -1,0 +1,30 @@
+.pointer, .particule {
+  position: fixed;
+  float: left;
+  left: 50%;
+  top: 50%; }
+
+.pointer {
+  background: #57b6cb;
+  width: 80px;
+  height: 80px;
+  margin-left: -40px;
+  margin-top: -40px;
+  border-radius: 50%; }
+
+.particule {
+  background: #000;
+  width: 80px;
+  height: 80px;
+  margin-left: -40px;
+  margin-top: -40px;
+  animation: explosion 1s 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+
+@keyframes explosion {
+  0% {
+    transform: scale(1) rotate(0); }
+  100% {
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    transform: scale(0.1) rotate(180deg); } }
+
+/*# sourceMappingURL=explosion.css.map */

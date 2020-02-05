@@ -2,6 +2,9 @@ $azul: rgba(87, 182, 203, 1)
 $verde: rgba(0, 100, 0, 1)
 $vermelho: rgba(220, 20, 60, 1)
 $amarelo: rgba(240, 230, 140, 1)    
+$size_g: 14px
+$size_m: 8px
+
 .pointer
     position: fixed
     float: left
@@ -9,31 +12,31 @@ $amarelo: rgba(240, 230, 140, 1)
     top: 50px
     border-radius: 50%
     background: $azul
-    width: 14px
-    height: 14px    
+    width: $size_g
+    height: $size_g    
     > span
         position: absolute
         float: left
         border-radius: 50%
-        width: 8px
-        height: 8px
+        width: $size_m
+        height: $size_m
         opacity: 0
         &:nth-child(1)
             background: $verde       
-            left: -8px
-            top: -8px
+            left: -$size_m
+            top: -$size_m
             z-index: 1
         &:nth-child(2)
             background: $vermelho
-            top: -8px
-            right: -8px
+            top: -$size_m
+            right: -$size_m
         &:nth-child(3)
-            left: -8px
+            left: -$size_m
             top: 3px
             background: $amarelo
         &:nth-child(4)
-            width: 14px
-            height: 14px    
+            width: $size_g
+            height: $size_g    
             background: $azul
     &.hover > span
         &:nth-child(1)
@@ -51,8 +54,8 @@ $amarelo: rgba(240, 230, 140, 1)
     &.active
         background: transparent
         > span
-            width: 14px
-            height: 14px
+            width: $size_g
+            height: $size_g
             left: 0px
             top: 0px
             background: $azul
@@ -88,95 +91,113 @@ $amarelo: rgba(240, 230, 140, 1)
 
 @keyframes explodeMiddle
     0%
+        opacity: 1
         background: $azul
     100%
         transform: scale(.3)   
         filter: blur(5px)
         background: $azul
+        opacity: .1
         
 
 @keyframes explodeBottom
     0%
+        opacity: 1
         background: $vermelho
     100%
         transform: scale(.5)  
-        top: 14px      
+        top: $size_g      
         filter: blur(5px)
         background: $azul
+        opacity: .1
 
 @keyframes explodeTop
     0%
+        opacity: 1
         background: $vermelho
     100%
-        top: -14px
+        top: -$size_g
         transform: scale(.5)   
         filter: blur(5px)
         background: $azul
+        opacity: .1
 
 @keyframes explodeLeft
     0%
+        opacity: 1
         background: $vermelho
     100%
         transform: scale(.5)        
-        left: -14px
+        left: -$size_g
         filter: blur(5px)
         background: $azul
+        opacity: .1
 
 @keyframes explodeRight
     0%
+        opacity: 1
         background: $vermelho
     100%
         transform: scale(.5)        
-        left: 14px
+        left: $size_g
         filter: blur(5px)
         background: $azul
+        opacity: .1
 
 @keyframes explodeLeftTop
     0%
+        opacity: 1
         background: $vermelho
     100%
-        left: -14px
-        top: -14px
+        left: -$size_g
+        top: -$size_g
         transform: scale(.3)
         filter: blur(5px)
         background: $azul
+        opacity: .1
 
 @keyframes explodeRightbottom
     0%
+        opacity: 1
         background: $vermelho
     100%
-        left: 14px
-        top: 14px
+        left: $size_g
+        top: $size_g
         transform: scale(.3)        
         filter: blur(5px)
         background: $azul
+        opacity: .1
 
 @keyframes explodeLeftBottom
     0%
+        opacity: 1
         background: $vermelho
     100%
-        left: -14px
-        top: 14px
+        left: -$size_g
+        top: $size_g
         transform: scale(.3)
         filter: blur(5px)
         background: $azul
+        opacity: .1
 
 @keyframes explodeRightTop
     0%
+        opacity: 1
         background: $vermelho
     100%
-        left: 14px
-        top: -14px
+        left: $size_g
+        top: -$size_g
         transform: scale(.3) 
         filter: blur(5px)
         background: $azul
+        opacity: .1
 
 
 @keyframes animate1
     0%
         opacity: 1
-        left: -8px
-        top: -8px        
+        left: -$size_m
+        top: -$size_m        
         z-index: -1
     50%
         left: 16px
@@ -186,16 +207,16 @@ $amarelo: rgba(240, 230, 140, 1)
     75%
         z-index: 2    
     100%
-        left: -8px
-        top: -8px
+        left: -$size_m
+        top: -$size_m
         z-index: -1
-        opacity: 1
+        opacity: 0
         
 @keyframes animate2
     0%
         opacity: 1
-        top: -8px
-        right: -8px        
+        top: -$size_m
+        right: -$size_m        
         z-index: -1
         width: 4px
         height: 4px
@@ -205,9 +226,9 @@ $amarelo: rgba(240, 230, 140, 1)
     75%
         z-index: 2    
     100%
-        opacity: 1
-        top: -8px
-        right: -8px        
+        opacity: 0
+        top: -$size_m
+        right: -$size_m        
         z-index: -1
 
 @keyframes animate3
@@ -221,9 +242,9 @@ $amarelo: rgba(240, 230, 140, 1)
         height: 4px
     100%
         left: -16px
-        opacity: 1
-        width: 8px
-        height: 8px
+        opacity: 0
+        width: $size_m
+        height: $size_m
 
 @keyframes mouseHover
     0%

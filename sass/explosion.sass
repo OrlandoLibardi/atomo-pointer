@@ -1,0 +1,32 @@
+$azul: rgba(87, 182, 203, 1)
+$verde: rgba(0, 100, 0, 1)
+$vermelho: rgba(220, 20, 60, 1)
+$amarelo: rgba(240, 230, 140, 1)    
+.pointer, .particule
+    position: fixed
+    float: left
+    left: 50%
+    top: 50%
+    
+.pointer
+    background: $azul
+    width: 80px
+    height: 80px 
+    margin-left: -40px
+    margin-top: -40px
+    border-radius: 50%
+
+.particule
+    background: #000
+    width: 80px
+    height: 80px 
+    margin-left: -40px
+    margin-top: -40px
+    animation: explosion 1s 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both    
+
+@keyframes explosion
+    0%
+        transform: scale(1) rotate(0)   
+    100%
+        clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)
+        transform: scale(.1) rotate(180deg)
