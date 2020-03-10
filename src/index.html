@@ -22,11 +22,11 @@
         </section>        
     </main>
     <script src="assets/js/jquery-3.1.1.min.js"></script>
-    <!--<script src="assets/js/mouseAtomo.js"></script>-->
-    <script>/*Plugin*/
+    <script>
+        /*Plugin*/
         (function ($) {
             "use strict";
-            $.fn.mouseAtomo = function (options) {
+            $.fn.mouseAtomico = function (options) {
                 var $el = $(this),
                     defaults = {
                         time: 10,
@@ -77,19 +77,14 @@
                     $("#pointer").addClass("hover");
                 }, function () {
                     $("#pointer").removeClass("hover");
-                    setTimeout(function () {
-                        //$("#pointer").removeClass("hover");
-                    }, 10);
                 });
-
-
-                
 
                 return init();
             }
-        }(jQuery)); /*Ready*/
+        }(jQuery)); 
+        /*Ready*/
         $(document).ready(function () {
-            $("#main").mouseAtomo();
+            $("#main").mouseAtomico();
         });
     </script>
 </body>
